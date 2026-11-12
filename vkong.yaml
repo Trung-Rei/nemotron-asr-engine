@@ -1,0 +1,28 @@
+# Reproduce the benchmarks on a rented GPU with vkong (https://vkong.tli-tech.com):
+#   vkong run --detach            # rents the GPU after you approve the price, runs bench/run_all.sh
+#   vkong attach <vk_...>         # follow the log
+#   vkong storage download nemotron-engine-results results -o ./results
+#   vkong app stop nemotron-engine-bench
+# Any other GPU machine works too: pip install -r research/requirements.txt && bash bench/run_all.sh
+
+# App
+type: task
+app: nemotron-engine-bench
+
+# Compute
+gpu: A100            # the 40 GB card; the results in docs/benchmarks.md were measured on it
+num_gpus: 1
+disk_gb: 80          # torch + NeMo ~15 GB, model files ~5 GB, dataset audio, caches
+
+# Budget
+max_price: 0.40      # USD per hour
+verified_only: false # public model and dataset only
+
+# Storage: results survive the machine
+storage:
+  volume: nemotron-engine-results
+
+# Runtime
+image: pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+init_cmd: apt-get update && apt-get install -y --no-install-recommends build-essential ffmpeg libsndfile1 git && pip install -r research/requirements.txt
+start: RESULTS_DIR=/vkong/storage/nemotron-engine-results bash bench/run_all.sh

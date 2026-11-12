@@ -1,0 +1,7 @@
+# Everything the benchmarks need, including the original NeMo model for the reference runs.
+# torch comes from your environment (pip install torch, or a pytorch/pytorch image).
+-e .[server,bench,dev]
+huggingface_hub[hf_xet]>=0.24
+# NeMo, pinned to the commit the port was checked against (only for bench/parity, bench/rtfx, nemo_vs_lite.sh)
+Cython>=3.0.0
+nemo_toolkit[asr] @ https://github.com/NVIDIA-NeMo/Speech/archive/e5d79d5a49cbec49d79440b0070aac0c32a8dbb8.tar.gz
