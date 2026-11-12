@@ -74,6 +74,13 @@ Các phiên bản chạy được nằm trong [`examples/`](examples):
 
 ## Benchmark
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/capacity-dark.svg">
+  <img alt="Độ trễ transcript cuối p95 theo số luồng đồng thời trên một A100: NeMo giữ dưới SLO 300 ms tới 192 luồng, nemotron-asr-engine tới 384 luồng qua API Python và 256 luồng qua server WebSocket." src="docs/assets/capacity-light.svg" width="760">
+</picture>
+
+Độ trễ của NeMo đo phía server, không gồm thời gian chờ chunk cuối đầy; cách đo này có lợi cho NeMo. Độ trễ của engine là đầu-cuối. Biểu đồ: `python docs/make_charts.py`.
+
 Mọi dòng đo trên cùng một NVIDIA A100 40 GB, chunk 320 ms, gói 20 ms theo thời gian thực, audio VietSuperSpeech. SLO: finalize p95 ≤ 300 ms, chunk lag p95 ≤ 320 ms, không từ chối luồng nào.
 
 | | Số luồng đồng thời đạt SLO | Finalize p50 / p95 ở mức đó | WER |

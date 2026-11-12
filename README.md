@@ -74,6 +74,13 @@ Runnable versions are in [`examples/`](examples):
 
 ## Benchmarks
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/capacity-dark.svg">
+  <img alt="Final transcript latency p95 versus concurrent streams on one A100: NeMo stays under the 300 ms SLO up to 192 streams, nemotron-asr-engine up to 384 through the Python API and 256 through the WebSocket server." src="docs/assets/capacity-light.svg" width="760">
+</picture>
+
+NeMo's latency is measured server-side, without the wait for the last chunk to fill; this favours NeMo. The engine's latency is end to end. Chart: `python docs/make_charts.py`.
+
 All rows: one NVIDIA A100 40 GB, 320 ms chunks, 20 ms packets in real time, VietSuperSpeech audio. SLO: finalize p95 ≤ 300 ms, chunk lag p95 ≤ 320 ms, no refused stream.
 
 | | Concurrent streams within SLO | Finalize p50 / p95 at that load | WER |

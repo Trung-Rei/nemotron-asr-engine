@@ -48,6 +48,11 @@ The scheduler costs nothing on the event loop, so this is a best case for NeMo.
 
 ### Capacity: concurrent real-time streams on one A100
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/capacity-dark.svg">
+  <img alt="Final transcript latency p95 versus concurrent streams on one A100: NeMo stays under the 300 ms SLO up to 192 streams, nemotron-asr-engine up to 384 through the Python API and 256 through the WebSocket server." src="assets/capacity-light.svg" width="760">
+</picture>
+
 | | Streams within SLO | Finalize p50 / p95 / p99 at that level | Chunk lag p50 / p95 | Throughput at that level |
 |---|---|---|---|---|
 | NeMo cache-aware streaming, synchronous scheduler | **192** | 95 / 154 / 171 ms ¹ | 97 / 156 ms | 607 chunks/s, batch 45.6 |

@@ -48,6 +48,11 @@ Scheduler này không tốn gì trên event loop, nên đây là trường hợp
 
 ### Sức tải: số luồng thời gian thực đồng thời trên một A100
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/capacity-dark.svg">
+  <img alt="Độ trễ transcript cuối p95 theo số luồng đồng thời trên một A100: NeMo giữ dưới SLO 300 ms tới 192 luồng, nemotron-asr-engine tới 384 luồng qua API Python và 256 luồng qua server WebSocket." src="assets/capacity-light.svg" width="760">
+</picture>
+
 | | Số luồng đạt SLO | Finalize p50 / p95 / p99 ở mức đó | Chunk lag p50 / p95 | Thông lượng ở mức đó |
 |---|---|---|---|---|
 | NeMo streaming cache-aware, scheduler đồng bộ | **192** | 95 / 154 / 171 ms ¹ | 97 / 156 ms | 607 chunk/s, batch 45,6 |

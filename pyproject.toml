@@ -31,7 +31,7 @@ dependencies = [
 server = ["fastapi>=0.110", "uvicorn[standard]>=0.29"]
 # benchmarks, the reference port (research/nemotron_lite) and the WebSocket load tests
 bench = ["soundfile>=0.12.1", "scipy", "datasets>=3.2.0", "jiwer>=3.0.0", "websockets>=12", "brotli>=1.2"]
-dev = ["ruff", "pytest"]
+dev = ["ruff", "pytest", "matplotlib"]  # matplotlib: docs/make_charts.py
 
 [project.scripts]
 nemotron-asr-engine = "nemotron_engine.cli:main"
