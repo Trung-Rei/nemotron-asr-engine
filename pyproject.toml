@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "nemotron-engine"
+name = "nemotron-asr-engine"
 version = "0.1.0"
 description = "Real-time multi-stream streaming ASR engine for NVIDIA Nemotron ASR streaming (0.6B), in plain PyTorch: one CUDA graph per step, hundreds of concurrent streams per GPU."
 readme = "README.md"
@@ -34,10 +34,10 @@ bench = ["soundfile>=0.12.1", "scipy", "datasets>=3.2.0", "jiwer>=3.0.0", "webso
 dev = ["ruff", "pytest"]
 
 [project.scripts]
-nemotron-engine = "nemotron_engine.cli:main"
+nemotron-asr-engine = "nemotron_engine.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Trung-Rei/nemotron-engine"
+Homepage = "https://github.com/Trung-Rei/nemotron-asr-engine"
 Model = "https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b"
 
 [tool.setuptools.packages.find]

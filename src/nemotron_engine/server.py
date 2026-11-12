@@ -1,7 +1,7 @@
 """WebSocket server for AsyncNemotronEngine: one process, one GPU, one engine.
 
-    pip install "nemotron-engine[server]"
-    nemotron-engine serve --port 8090
+    pip install "nemotron-asr-engine[server]"
+    nemotron-asr-engine serve --port 8090
     # or: uvicorn nemotron_engine.server:app --host 0.0.0.0 --port 8090   (one worker: the engine owns the GPU)
 
 Settings come from the environment (all optional):
@@ -67,7 +67,7 @@ async def lifespan(app: FastAPI):
         await app.state.engine.aclose()
 
 
-app = FastAPI(title="nemotron-engine", lifespan=lifespan)
+app = FastAPI(title="nemotron-asr-engine", lifespan=lifespan)
 
 
 def _rss_mb() -> float:

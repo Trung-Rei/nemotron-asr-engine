@@ -10,6 +10,6 @@ about: Something does not work or gives a wrong transcript
 **Environment**
 - GPU and driver (`nvidia-smi`):
 - `python -c "import torch; print(torch.__version__, torch.version.cuda)"`:
-- nemotron-engine version / commit:
+- nemotron-asr-engine version / commit:
 
 **Logs** (the error and a few lines before it)

@@ -51,8 +51,8 @@ The scheduler costs nothing on the event loop, so this is a best case for NeMo.
 | | Streams within SLO | Finalize p50 / p95 / p99 at that level | Chunk lag p50 / p95 | Throughput at that level |
 |---|---|---|---|---|
 | NeMo cache-aware streaming, synchronous scheduler | **192** | 95 / 154 / 171 ms ¹ | 97 / 156 ms | 607 chunks/s, batch 45.6 |
-| **nemotron-engine, asyncio API** | **384** | **51 / 96 / 120 ms** | 48 / 86 ms | 1,278 chunks/s, batch 45.0 |
-| nemotron-engine, WebSocket server (4 client processes) | **256** | 26 / 65 / 206 ms | 19 / 30 ms | |
+| **nemotron-asr-engine, asyncio API** | **384** | **51 / 96 / 120 ms** | 48 / 86 ms | 1,278 chunks/s, batch 45.0 |
+| nemotron-asr-engine, WebSocket server (4 client processes) | **256** | 26 / 65 / 206 ms | 19 / 30 ms | |
 
 ¹ NeMo's "finalize" is measured server-side: from the moment the chunk holding the utterance's last sample is complete. It does not include the wait for that chunk to fill. Measured end to end, from the end of speech, NeMo's p95 at 192 streams is **421 ms**. The engine's numbers are always end to end: from `end_turn()` to the final event at the client, including the padding of the open chunk. The capacity comparison is therefore conservative toward NeMo.
 
@@ -67,7 +67,7 @@ All levels:
 | 192 | 607 | 45.6 | 97 / 156 | 95 / 154 / 171 | 421 | 24.6 | ✅ |
 | 256 | 853 | 62.5 | 173 / 778 | 176 / 763 / 887 | 970 | 23.9 | ❌ |
 
-**nemotron-engine, asyncio API** (`bench/streaming/engine_loadtest.py`)
+**nemotron-asr-engine, asyncio API** (`bench/streaming/engine_loadtest.py`)
 
 | Target streams | Chunks/s | Mean batch | Chunk lag p50/p95 ms | Finalize p50/p95/p99 ms | Process CPU | WER % | SLO |
 |---|---|---|---|---|---|---|---|
@@ -82,7 +82,7 @@ The edge between 384 and 448 is not sharp. In a second, shorter run (`bench/prof
 
 **Without CUDA graphs** (`--no-cuda-graphs`), 256 streams already fail: finalize p95 973 ms, batch pinned at 63.6, process CPU 102%. Every step is launch-bound at ~41 ms.
 
-**`nemotron-engine bench`**, the CLI's quick check, uses a simpler workload: every stream speaks 3 s and pauses 5 s, starting at a random point of that cycle, and all streams stay open for the whole level (no arrivals, no first-chunk bursts). On this A100 it gave:
+**`nemotron-asr-engine bench`**, the CLI's quick check, uses a simpler workload: every stream speaks 3 s and pauses 5 s, starting at a random point of that cycle, and all streams stay open for the whole level (no arrivals, no first-chunk bursts). On this A100 it gave:
 
 | Streams | Chunks/s | Mean batch | Finalize p50 / p95 / p99 |
 |---|---|---|---|
@@ -92,7 +92,7 @@ The edge between 384 and 448 is not sharp. In a second, shorter run (`bench/prof
 
 Use it to size your own GPU quickly. Use the full load test for numbers you want to compare.
 
-**nemotron-engine, WebSocket server** (`bench/streaming/ws_bench.sh`, 16 kHz PCM16, 20 ms frames, clients in 4 processes on the same machine)
+**nemotron-asr-engine, WebSocket server** (`bench/streaming/ws_bench.sh`, 16 kHz PCM16, 20 ms frames, clients in 4 processes on the same machine)
 
 | Target streams | Refused | Finalize p50/p95/p99 ms | Chunk lag p50/p95 ms | WER % | SLO |
 |---|---|---|---|---|---|
@@ -166,7 +166,7 @@ bash bench/parity/run_parity.sh ref bench stream-ref stream-bench compare      #
 VA_BACKENDS=nemo VA_PHASES=sweep bash bench/streaming/nemo_vs_lite.sh          # NeMo capacity
 python bench/streaming/engine_loadtest.py --levels 256 448 512 --out results/engine   # engine capacity
 bash bench/streaming/ws_bench.sh 256 384 448                                   # through the WebSocket server
-nemotron-engine bench --streams 64 128 256 --wav speech.wav                    # quick check on your GPU
+nemotron-asr-engine bench --streams 64 128 256 --wav speech.wav                    # quick check on your GPU
 ```
 
 Measurements near capacity vary from run to run. At the highest passing level, finalize p95 of the same configuration can differ by tens of milliseconds between runs. Compare numbers only within the same GPU and run.

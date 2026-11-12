@@ -1,10 +1,10 @@
-# nemotron-engine
+# nemotron-asr-engine
 
 *[Tiếng Việt](README.vi.md)*
 
 **Serve hundreds of live speech-to-text streams from one GPU.**
 
-nemotron-engine is a real-time, multi-stream streaming ASR engine for NVIDIA's [Nemotron ASR streaming 0.6B](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) model (FastConformer + RNN-T, ~100 languages). It is written in plain PyTorch, with no NeMo at run time. You can:
+nemotron-asr-engine is a real-time, multi-stream streaming ASR engine for NVIDIA's [Nemotron ASR streaming 0.6B](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) model (FastConformer + RNN-T, ~100 languages). It is written in plain PyTorch, with no NeMo at run time. You can:
 
 - embed it in your asyncio app;
 - run it as a WebSocket server;
@@ -24,13 +24,13 @@ On one A100 40 GB, the engine serves **384 concurrent real-time streams** with t
 You need an NVIDIA GPU with CUDA, Python ≥ 3.10 and PyTorch ≥ 2.4.
 
 ```bash
-pip install "nemotron-engine[server] @ git+https://github.com/Trung-Rei/nemotron-engine"
+pip install "nemotron-asr-engine[server] @ git+https://github.com/Trung-Rei/nemotron-asr-engine"
 
 # transcribe files (each file is its own concurrent stream); the model downloads on first use (~2.5 GB)
-nemotron-engine transcribe speech.wav --language en-US
+nemotron-asr-engine transcribe speech.wav --language en-US
 
 # WebSocket server + a microphone demo page at http://localhost:8090
-nemotron-engine serve --port 8090 --max-streams 256
+nemotron-asr-engine serve --port 8090 --max-streams 256
 ```
 
 The demo page needs microphone access, which browsers allow only on `localhost` or HTTPS. For a remote GPU box, open a tunnel first: `ssh -L 8090:localhost:8090 gpu-box`.
@@ -79,8 +79,8 @@ All rows: one NVIDIA A100 40 GB, 320 ms chunks, 20 ms packets in real time, Viet
 | | Concurrent streams within SLO | Finalize p50 / p95 at that load | WER |
 |---|---|---|---|
 | NeMo cache-aware streaming (batched, synchronous scheduler) | 192 | 95 / 154 ms | equal |
-| **nemotron-engine, asyncio API** | **384** | **51 / 96 ms** | equal |
-| nemotron-engine, WebSocket server | 256 | 26 / 65 ms | equal |
+| **nemotron-asr-engine, asyncio API** | **384** | **51 / 96 ms** | equal |
+| nemotron-asr-engine, WebSocket server | 256 | 26 / 65 ms | equal |
 
 - **Accuracy.** The reference port matches NeMo: WER 23.91% vs 23.91% at 1120 ms chunks and 25.19% vs 25.18% at 320 ms, on 500 utterances. The engine's tokens are identical to the port's (64/64 streams, 0 of 9,272 tokens differ).
 - **Scope.** The engine is built for live streams. For offline batch transcription of files, it is not faster than NeMo's offline path: the reference port measured within a few percent of NeMo's RTFx on an A100.
@@ -160,7 +160,7 @@ Throughput is bounded by GPU compute, not memory: see the benchmark table for ho
 ## WebSocket server
 
 ```bash
-nemotron-engine serve --host 0.0.0.0 --port 8090 --max-streams 256 [--language en-US]
+nemotron-asr-engine serve --host 0.0.0.0 --port 8090 --max-streams 256 [--language en-US]
 # equivalent: NEMOTRON_MAX_STREAMS=256 uvicorn nemotron_engine.server:app --port 8090   (one worker per GPU)
 ```
 

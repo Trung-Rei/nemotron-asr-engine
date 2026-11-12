@@ -51,8 +51,8 @@ Scheduler này không tốn gì trên event loop, nên đây là trường hợp
 | | Số luồng đạt SLO | Finalize p50 / p95 / p99 ở mức đó | Chunk lag p50 / p95 | Thông lượng ở mức đó |
 |---|---|---|---|---|
 | NeMo streaming cache-aware, scheduler đồng bộ | **192** | 95 / 154 / 171 ms ¹ | 97 / 156 ms | 607 chunk/s, batch 45,6 |
-| **nemotron-engine, API asyncio** | **384** | **51 / 96 / 120 ms** | 48 / 86 ms | 1.278 chunk/s, batch 45,0 |
-| nemotron-engine, server WebSocket (4 process client) | **256** | 26 / 65 / 206 ms | 19 / 30 ms | |
+| **nemotron-asr-engine, API asyncio** | **384** | **51 / 96 / 120 ms** | 48 / 86 ms | 1.278 chunk/s, batch 45,0 |
+| nemotron-asr-engine, server WebSocket (4 process client) | **256** | 26 / 65 / 206 ms | 19 / 30 ms | |
 
 ¹ "Finalize" của NeMo đo phía server: tính từ lúc chunk chứa mẫu cuối của câu đã đủ, không gồm thời gian chờ chunk đó đầy. Đo đầu-cuối từ lúc hết tiếng, p95 của NeMo ở 192 luồng là **421 ms**. Số của engine luôn là đầu-cuối: từ `end_turn()` tới lúc client nhận final, gồm cả việc đệm chunk đang dở. Vì vậy phép so sánh sức tải này đang nghiêng về phía có lợi cho NeMo.
 
@@ -67,7 +67,7 @@ Mọi mức tải:
 | 192 | 607 | 45,6 | 97 / 156 | 95 / 154 / 171 | 421 | 24,6 | ✅ |
 | 256 | 853 | 62,5 | 173 / 778 | 176 / 763 / 887 | 970 | 23,9 | ❌ |
 
-**nemotron-engine, API asyncio** (`bench/streaming/engine_loadtest.py`)
+**nemotron-asr-engine, API asyncio** (`bench/streaming/engine_loadtest.py`)
 
 | Số luồng mục tiêu | Chunk/s | Batch TB | Chunk lag p50/p95 ms | Finalize p50/p95/p99 ms | CPU của process | WER % | SLO |
 |---|---|---|---|---|---|---|---|
@@ -82,7 +82,7 @@ Ranh giới giữa 384 và 448 không sắc nét. Ở một lần chạy thứ h
 
 **Khi tắt CUDA graph** (`--no-cuda-graphs`), ngay 256 luồng đã trượt: finalize p95 973 ms, batch kẹt ở 63,6, CPU của process 102%. Bước nào cũng bị giới hạn bởi việc gọi kernel, khoảng 41 ms.
 
-**`nemotron-engine bench`**, lệnh kiểm tra nhanh của CLI, dùng workload đơn giản hơn: mỗi luồng nói 3 s rồi lặng 5 s, bắt đầu ở một điểm ngẫu nhiên trong chu kỳ đó, và mọi luồng mở suốt mức tải (không có luồng mới đến, không có đợt chunk đầu dồn dập). Trên A100 này nó cho:
+**`nemotron-asr-engine bench`**, lệnh kiểm tra nhanh của CLI, dùng workload đơn giản hơn: mỗi luồng nói 3 s rồi lặng 5 s, bắt đầu ở một điểm ngẫu nhiên trong chu kỳ đó, và mọi luồng mở suốt mức tải (không có luồng mới đến, không có đợt chunk đầu dồn dập). Trên A100 này nó cho:
 
 | Số luồng | Chunk/s | Batch TB | Finalize p50 / p95 / p99 |
 |---|---|---|---|
@@ -92,7 +92,7 @@ Ranh giới giữa 384 và 448 không sắc nét. Ở một lần chạy thứ h
 
 Dùng lệnh này để định cỡ GPU của bạn cho nhanh. Khi cần số liệu để so sánh, hãy dùng load test đầy đủ.
 
-**nemotron-engine, server WebSocket** (`bench/streaming/ws_bench.sh`, PCM16 16 kHz, frame 20 ms, client chạy trong 4 process trên cùng máy)
+**nemotron-asr-engine, server WebSocket** (`bench/streaming/ws_bench.sh`, PCM16 16 kHz, frame 20 ms, client chạy trong 4 process trên cùng máy)
 
 | Số luồng mục tiêu | Bị từ chối | Finalize p50/p95/p99 ms | Chunk lag p50/p95 ms | WER % | SLO |
 |---|---|---|---|---|---|
@@ -166,7 +166,7 @@ bash bench/parity/run_parity.sh ref bench stream-ref stream-bench compare      #
 VA_BACKENDS=nemo VA_PHASES=sweep bash bench/streaming/nemo_vs_lite.sh          # sức tải của NeMo
 python bench/streaming/engine_loadtest.py --levels 256 448 512 --out results/engine   # sức tải của engine
 bash bench/streaming/ws_bench.sh 256 384 448                                   # qua server WebSocket
-nemotron-engine bench --streams 64 128 256 --wav speech.wav                    # kiểm tra nhanh trên GPU của bạn
+nemotron-asr-engine bench --streams 64 128 256 --wav speech.wav                    # kiểm tra nhanh trên GPU của bạn
 ```
 
 Số đo ở sát ngưỡng sức tải dao động giữa các lần chạy. Ở mức cao nhất còn đạt, finalize p95 của cùng một cấu hình có thể lệch nhau vài chục mili giây giữa các lần. Chỉ nên so sánh số đo trên cùng GPU và trong cùng một lần chạy.

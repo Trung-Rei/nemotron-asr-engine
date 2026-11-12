@@ -1,4 +1,4 @@
-"""Smoke test of the nemotron-engine WebSocket server (start it first, e.g. with NEMOTRON_MAX_STREAMS=128).
+"""Smoke test of the nemotron-asr-engine WebSocket server (start it first, e.g. with NEMOTRON_MAX_STREAMS=128).
 
 1. GET /health
 2. --n VietSuperSpeech utterances as concurrent 8 kHz mu-law streams in real time: WER and client-side finalize

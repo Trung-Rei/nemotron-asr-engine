@@ -2,7 +2,7 @@
 
 *[Tiếng Việt](architecture.vi.md)*
 
-nemotron-engine runs [`nvidia/nemotron-3.5-asr-streaming-0.6b`](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) for many live audio streams at once on one GPU. This page explains how one process turns hundreds of independent streams into a few large GPU steps, and why each design choice is there.
+nemotron-asr-engine runs [`nvidia/nemotron-3.5-asr-streaming-0.6b`](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) for many live audio streams at once on one GPU. This page explains how one process turns hundreds of independent streams into a few large GPU steps, and why each design choice is there.
 
 ## The model in one paragraph
 
@@ -138,7 +138,7 @@ The known trade-off: a token the model emits late, after the boundary (most ofte
 | [`stream_audio.py`](../src/nemotron_engine/stream_audio.py) | per-stream raw sample buffer, chunk geometry, sample windows |
 | [`audio.py`](../src/nemotron_engine/audio.py) | PCM16 / mu-law / f32 decoding, streaming 8→16 kHz upsampler |
 | [`server.py`](../src/nemotron_engine/server.py) | FastAPI WebSocket server and demo page |
-| [`cli.py`](../src/nemotron_engine/cli.py) | `nemotron-engine transcribe / serve / bench` |
+| [`cli.py`](../src/nemotron_engine/cli.py) | `nemotron-asr-engine transcribe / serve / bench` |
 
 ## Where one step spends its time
 

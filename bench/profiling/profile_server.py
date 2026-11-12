@@ -1,4 +1,4 @@
-"""Run the nemotron-engine WebSocket server with the profile_engine.py instrumentation, to see what the server's
+"""Run the nemotron-asr-engine WebSocket server with the profile_engine.py instrumentation, to see what the server's
 event loop costs the GPU worker. Adds two endpoints that ws_loadtest.py --prof-url calls around its window:
 
     POST /prof/start   reset and start measuring

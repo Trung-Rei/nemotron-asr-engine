@@ -1,10 +1,10 @@
-# nemotron-engine
+# nemotron-asr-engine
 
 *[English](README.md)*
 
 **Phục vụ hàng trăm luồng nhận dạng giọng nói trực tiếp trên một GPU.**
 
-nemotron-engine là engine ASR streaming thời gian thực, nhiều luồng, cho mô hình [Nemotron ASR streaming 0.6B](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) của NVIDIA (FastConformer + RNN-T, khoảng 100 ngôn ngữ). Engine viết bằng PyTorch thuần, lúc chạy không cần NeMo. Bạn có thể:
+nemotron-asr-engine là engine ASR streaming thời gian thực, nhiều luồng, cho mô hình [Nemotron ASR streaming 0.6B](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) của NVIDIA (FastConformer + RNN-T, khoảng 100 ngôn ngữ). Engine viết bằng PyTorch thuần, lúc chạy không cần NeMo. Bạn có thể:
 
 - nhúng engine vào ứng dụng asyncio;
 - chạy engine như một server WebSocket;
@@ -24,13 +24,13 @@ Trên một A100 40 GB, engine phục vụ **384 luồng thời gian thực đ�
 Cần GPU NVIDIA có CUDA, Python ≥ 3.10 và PyTorch ≥ 2.4.
 
 ```bash
-pip install "nemotron-engine[server] @ git+https://github.com/Trung-Rei/nemotron-engine"
+pip install "nemotron-asr-engine[server] @ git+https://github.com/Trung-Rei/nemotron-asr-engine"
 
 # nhận dạng file (mỗi file là một luồng chạy song song); lần đầu tự tải mô hình (~2,5 GB)
-nemotron-engine transcribe speech.wav --language vi-VN
+nemotron-asr-engine transcribe speech.wav --language vi-VN
 
 # server WebSocket + trang demo thu mic tại http://localhost:8090
-nemotron-engine serve --port 8090 --max-streams 256
+nemotron-asr-engine serve --port 8090 --max-streams 256
 ```
 
 Trang demo cần quyền dùng micro, mà trình duyệt chỉ cho phép trên `localhost` hoặc HTTPS. Nếu GPU ở máy khác, mở tunnel trước: `ssh -L 8090:localhost:8090 may-gpu`.
@@ -79,8 +79,8 @@ Mọi dòng đo trên cùng một NVIDIA A100 40 GB, chunk 320 ms, gói 20 ms th
 | | Số luồng đồng thời đạt SLO | Finalize p50 / p95 ở mức đó | WER |
 |---|---|---|---|
 | NeMo streaming cache-aware (gom batch, scheduler đồng bộ) | 192 | 95 / 154 ms | bằng nhau |
-| **nemotron-engine, API asyncio** | **384** | **51 / 96 ms** | bằng nhau |
-| nemotron-engine, server WebSocket | 256 | 26 / 65 ms | bằng nhau |
+| **nemotron-asr-engine, API asyncio** | **384** | **51 / 96 ms** | bằng nhau |
+| nemotron-asr-engine, server WebSocket | 256 | 26 / 65 ms | bằng nhau |
 
 - **Độ chính xác.** Bản port tham chiếu khớp NeMo: WER 23,91% so với 23,91% ở chunk 1120 ms, và 25,19% so với 25,18% ở chunk 320 ms, trên 500 câu. Token của engine giống hệt bản port (64/64 stream, 0 trên 9.272 token khác).
 - **Phạm vi.** Engine được làm cho luồng trực tiếp. Với nhận dạng file offline theo lô, engine không nhanh hơn đường offline của NeMo: RTFx của bản port tham chiếu đo trên A100 chỉ lệch NeMo vài phần trăm.
@@ -160,7 +160,7 @@ Thông lượng bị giới hạn bởi sức tính của GPU chứ không phả
 ## Server WebSocket
 
 ```bash
-nemotron-engine serve --host 0.0.0.0 --port 8090 --max-streams 256 [--language vi-VN]
+nemotron-asr-engine serve --host 0.0.0.0 --port 8090 --max-streams 256 [--language vi-VN]
 # tương đương: NEMOTRON_MAX_STREAMS=256 uvicorn nemotron_engine.server:app --port 8090   (một worker cho mỗi GPU)
 ```
 

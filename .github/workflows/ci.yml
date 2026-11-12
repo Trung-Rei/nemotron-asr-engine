@@ -14,4 +14,4 @@ jobs:
       - run: pip install ruff pytest numpy
       - run: ruff check .
       - run: pytest -q          # CPU tests: audio decoding, upsampler, chunk windows (no torch, no GPU)
-      - run: pip install --no-deps -e . && nemotron-engine --help
+      - run: pip install --no-deps -e . && nemotron-asr-engine --help

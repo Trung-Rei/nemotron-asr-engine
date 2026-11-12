@@ -1,4 +1,4 @@
-"""Real-time streaming load test through the nemotron-engine WebSocket server, with a memory monitor.
+"""Real-time streaming load test through the nemotron-asr-engine WebSocket server, with a memory monitor.
 
 Same workload as engine_loadtest.py (Poisson session arrivals, synthetic utterance timing, VietSuperSpeech audio,
 16 kHz pcm16 packets on the wall clock, end_turn when an utterance ends), but every session is a WebSocket to the

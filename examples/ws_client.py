@@ -1,4 +1,4 @@
-"""Stream WAV files to a nemotron-engine server in real time, one WebSocket per file, all files concurrently.
+"""Stream WAV files to a nemotron-asr-engine server in real time, one WebSocket per file, all files concurrently.
 
     pip install websockets soundfile numpy scipy
     python examples/ws_client.py a.wav b.wav --url ws://HOST:8090/v1/stream [--sample-rate 8000 --encoding mulaw]

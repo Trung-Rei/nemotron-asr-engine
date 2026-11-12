@@ -2,7 +2,7 @@
 
 *[English](architecture.md)*
 
-nemotron-engine chạy [`nvidia/nemotron-3.5-asr-streaming-0.6b`](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) cho nhiều luồng audio trực tiếp cùng lúc trên một GPU. Trang này giải thích cách một process biến hàng trăm stream độc lập thành vài bước GPU lớn, và lý do của từng lựa chọn thiết kế.
+nemotron-asr-engine chạy [`nvidia/nemotron-3.5-asr-streaming-0.6b`](https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b) cho nhiều luồng audio trực tiếp cùng lúc trên một GPU. Trang này giải thích cách một process biến hàng trăm stream độc lập thành vài bước GPU lớn, và lý do của từng lựa chọn thiết kế.
 
 ## Mô hình trong một đoạn
 
@@ -138,7 +138,7 @@ Chọn batch đúng lúc GPU rảnh, thay vì chuẩn bị sớm hơn, nghĩa l�
 | [`stream_audio.py`](../src/nemotron_engine/stream_audio.py) | Buffer mẫu thô của từng stream, hình học chunk, cửa sổ mẫu |
 | [`audio.py`](../src/nemotron_engine/audio.py) | Giải mã PCM16 / mu-law / f32, upsample 8→16 kHz theo luồng |
 | [`server.py`](../src/nemotron_engine/server.py) | Server WebSocket FastAPI và trang demo |
-| [`cli.py`](../src/nemotron_engine/cli.py) | `nemotron-engine transcribe / serve / bench` |
+| [`cli.py`](../src/nemotron_engine/cli.py) | `nemotron-asr-engine transcribe / serve / bench` |
 
 ## Một bước tốn thời gian ở đâu
 

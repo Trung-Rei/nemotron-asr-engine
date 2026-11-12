@@ -1,13 +1,13 @@
 # Reproduce the benchmarks on a rented GPU with vkong (https://vkong.tli-tech.com):
 #   vkong run --detach            # rents the GPU after you approve the price, runs bench/run_all.sh
 #   vkong attach <vk_...>         # follow the log
-#   vkong storage download nemotron-engine-results results -o ./results
-#   vkong app stop nemotron-engine-bench
+#   vkong storage download nemotron-asr-engine-results results -o ./results
+#   vkong app stop nemotron-asr-engine-bench
 # Any other GPU machine works too: pip install -r research/requirements.txt && bash bench/run_all.sh
 
 # App
 type: task
-app: nemotron-engine-bench
+app: nemotron-asr-engine-bench
 
 # Compute
 gpu: A100            # the 40 GB card; the results in docs/benchmarks.md were measured on it
@@ -20,9 +20,9 @@ verified_only: true  # an unverified host failed to start once; verified ones st
 
 # Storage: results survive the machine
 storage:
-  volume: nemotron-engine-results
+  volume: nemotron-asr-engine-results
 
 # Runtime
 image: pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
 init_cmd: apt-get update && apt-get install -y --no-install-recommends build-essential ffmpeg libsndfile1 git && pip install -r research/requirements.txt
-start: RESULTS_DIR=/vkong/storage/nemotron-engine-results bash bench/run_all.sh
+start: RESULTS_DIR=/vkong/storage/nemotron-asr-engine-results bash bench/run_all.sh

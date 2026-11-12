@@ -1,8 +1,8 @@
 """Command line: transcribe files, serve the WebSocket API, or measure how many streams a GPU sustains.
 
-    nemotron-engine transcribe a.wav b.wav [--language en-US] [--realtime] [--partials]
-    nemotron-engine serve [--port 8090] [--max-streams 256]
-    nemotron-engine bench [--streams 64 128 256] [--seconds 60] [--wav speech.wav]
+    nemotron-asr-engine transcribe a.wav b.wav [--language en-US] [--realtime] [--partials]
+    nemotron-asr-engine serve [--port 8090] [--max-streams 256]
+    nemotron-asr-engine bench [--streams 64 128 256] [--seconds 60] [--wav speech.wav]
 """
 
 from __future__ import annotations
@@ -114,7 +114,7 @@ def _serve(args) -> None:
     try:
         import uvicorn
     except ImportError:
-        sys.exit('serve needs the server extra: pip install "nemotron-engine[server]"')
+        sys.exit('serve needs the server extra: pip install "nemotron-asr-engine[server]"')
     env = {"NEMOTRON_LANGUAGE": args.language, "NEMOTRON_MAX_STREAMS": args.max_streams, "NEMOTRON_MAX_BATCH": args.max_batch,
            "NEMOTRON_MAX_LAG_MS": args.max_lag_ms, "NEMOTRON_MATMUL_PRECISION": args.matmul_precision,
            "NEMOTRON_MODEL_DIR": args.model_dir, "NEMOTRON_CUDA_GRAPHS": "0" if args.no_cuda_graphs else None}
@@ -195,7 +195,7 @@ async def _bench(args) -> None:
 
 # --------------------------------------------------------------------------- main
 def main(argv: list[str] | None = None) -> None:
-    p = argparse.ArgumentParser(prog="nemotron-engine", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = argparse.ArgumentParser(prog="nemotron-asr-engine", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
 
     def common(sp):

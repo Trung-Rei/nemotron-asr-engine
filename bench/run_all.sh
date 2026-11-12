@@ -9,9 +9,9 @@
 #   parity     accuracy: reference port vs NeMo, offline and streaming, 500 VietSuperSpeech utterances, 320 ms + 1120 ms
 #   rtfx       offline throughput (RTFx): NeMo's transcribe_speech.py vs the reference port
 #   capacity   concurrent real-time streams at p95 finalize <= 300 ms on this GPU: NeMo (cache-aware streaming,
-#              shared scheduler) and nemotron-engine (asyncio API), same workload
+#              shared scheduler) and nemotron-asr-engine (asyncio API), same workload
 #   ws         the WebSocket server: smoke test, then the load test through the server
-#   cli        nemotron-engine transcribe and nemotron-engine bench
+#   cli        nemotron-asr-engine transcribe and nemotron-asr-engine bench
 #   profile    time per part of one step (graph breakdown), CUDA graphs on vs off, worker phases and GIL wait
 # Results go to $RESULTS_DIR (default results/).
 set -uo pipefail
@@ -63,8 +63,8 @@ print(" ".join(f"/tmp/sample{i}.wav" for i in range(len(rows))))
 PY
 )
       wav=$(echo "$wav" | tail -1)  # load_rows_with_audio prints progress on stdout too
-      run cli-transcribe nemotron-engine transcribe $wav --language vi-VN
-      run cli-bench nemotron-engine bench --streams 128 256 448 --seconds 60 --language vi-VN --wav ${wav%% *} ;;
+      run cli-transcribe nemotron-asr-engine transcribe $wav --language vi-VN
+      run cli-bench nemotron-asr-engine bench --streams 128 256 448 --seconds 60 --language vi-VN --wav ${wav%% *} ;;
     profile)
       run profile-graph python bench/profiling/graph_breakdown.py --batch 64 32 8 --stages --out "$RESULTS_DIR/profile/graph"
       run profile-engine python bench/profiling/profile_engine.py --max-streams 704 --runs 448:20 512:20 512:100 \
