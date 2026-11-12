@@ -31,8 +31,10 @@ import torch
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import engine_loadtest as lt  # noqa: E402  (same workload)
 import repo_paths  # noqa: E402,F401  (repo code on sys.path)
+
+# isort: split
+import engine_loadtest as lt  # noqa: E402  (same workload)
 
 PHASES = ["drain", "prepare", "finish", "decode", "flush", "submit", "idle"]
 

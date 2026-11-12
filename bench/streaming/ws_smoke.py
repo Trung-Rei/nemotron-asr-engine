@@ -21,6 +21,8 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import repo_paths  # noqa: E402,F401  (repo code on sys.path)
+
+# isort: split
 from ws_client import stream_one  # noqa: E402
 
 

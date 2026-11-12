@@ -10,6 +10,8 @@ from torch.nn.attention import SDPBackend, sdpa_kernel
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "bench"))
 import repo_paths  # noqa: E402,F401  (repo code on sys.path)
+
+# isort: split
 from nemotron_lite import NemotronLite  # noqa: E402
 
 torch.set_grad_enabled(False)

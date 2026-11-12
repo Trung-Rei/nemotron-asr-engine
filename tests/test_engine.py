@@ -25,6 +25,8 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "bench"))
 import repo_paths  # noqa: E402,F401  (repo code on sys.path)
+
+# isort: split
 from test_audio_cpu import mulaw_encode  # noqa: E402
 from test_audio_cpu import run_all as check_audio  # noqa: E402
 

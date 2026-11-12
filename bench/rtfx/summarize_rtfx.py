@@ -10,6 +10,8 @@ import jiwer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import repo_paths  # noqa: E402,F401  (repo code on sys.path)
+
+# isort: split
 from common import normalize_for_wer, strip_language_tag
 
 out = Path(sys.argv[1])

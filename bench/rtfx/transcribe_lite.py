@@ -21,6 +21,8 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import repo_paths  # noqa: E402,F401  (repo code on sys.path)
+
+# isort: split
 from nemotron_lite import NemotronLite, load_audio  # noqa: E402
 
 DEFAULTS = {
