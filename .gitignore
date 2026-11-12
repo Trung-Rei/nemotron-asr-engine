@@ -5,7 +5,7 @@ __pycache__/
 venv/
 build/
 dist/
-results/
+/results/
 .pytest_cache/
 .ruff_cache/
 *.safetensors

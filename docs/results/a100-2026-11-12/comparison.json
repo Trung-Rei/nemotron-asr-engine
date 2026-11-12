@@ -1,0 +1,309 @@
+[
+  {
+    "a": "lite_offline_r13_500",
+    "b": "lite_stream_r13_500",
+    "samples": 500,
+    "wer_a": 23.914167528438472,
+    "wer_b": 23.914167528438472,
+    "wer_delta_points": 0.0,
+    "normalized_text_match": 1.0,
+    "raw_text_match": 1.0,
+    "token_match": 1.0,
+    "rtfx_a": 187.46476020747224,
+    "rtfx_b": 19.195942385073632,
+    "vram_gb_a": 3.5570015907287598,
+    "vram_gb_b": 2.4331417083740234,
+    "lite_forbidden_modules": [],
+    "pass": true,
+    "mismatches": []
+  },
+  {
+    "a": "lite_offline_r3_500",
+    "b": "lite_stream_r3_500",
+    "samples": 500,
+    "wer_a": 25.189589796621853,
+    "wer_b": 25.189589796621853,
+    "wer_delta_points": 0.0,
+    "normalized_text_match": 1.0,
+    "raw_text_match": 1.0,
+    "token_match": 1.0,
+    "rtfx_a": 187.68392116570672,
+    "rtfx_b": 7.268598177799516,
+    "vram_gb_a": 3.5570015907287598,
+    "vram_gb_b": 2.427143096923828,
+    "lite_forbidden_modules": [],
+    "pass": true,
+    "mismatches": []
+  },
+  {
+    "a": "ref_offline_r13_500",
+    "b": "lite_offline_r13_500",
+    "samples": 500,
+    "wer_a": 23.914167528438472,
+    "wer_b": 23.914167528438472,
+    "wer_delta_points": 0.0,
+    "normalized_text_match": 0.992,
+    "raw_text_match": 0.992,
+    "token_match": 0.992,
+    "rtfx_a": 88.172253991539,
+    "rtfx_b": 187.46476020747224,
+    "vram_gb_a": 4.796775817871094,
+    "vram_gb_b": 3.5570015907287598,
+    "lite_forbidden_modules": [],
+    "pass": true,
+    "mismatches": [
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/Album_Loi_Choi_-_Wren_Evans_ft_itsnk_Bit_Tat_Nhac_268_seg008.wav",
+        "ref_offline_r13_500": "Cái đầu tiên ý nó không phải là một cái gì khó đâu, thực sự nó nó sẽ xảy ra thôi. <vi-VN> Thỉnh thoảng nó cũng sẽ có những mâu thuẫn, thì cái đấy là cái khó nó luôn luôn là một cái khó, nhưng mà anh em mình rất là nhanh ấy, nhưng mà cũng không sao, nhưng mà cái khó thứ hai, cái khó quan trọng này là anh không ở đây hiểu.",
+        "lite_offline_r13_500": "Cái đầu tiên ý nó không phải là một cái cái gì khó đâu, thực sự nó nó sẽ xảy ra thôi. <vi-VN> Thỉnh thoảng nó cũng sẽ có những mâu thuẫn, thì cái đấy là cái khó nó luôn luôn là một cái khó, nhưng mà anh em mình rất là nhanh ấy, nhưng mà cũng không sao, nhưng mà cái khó thứ hai, cái khó quan trọng này là anh không ở đây hiểu."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part06/Ke_chuyen_bang_hinh_anh_3D_-_Thao_Dan_Visual_Artist_va_Creative_Director_MAD_EP20_seg043.wav",
+        "ref_offline_r13_500": "Cả chờ chờ trần SVA là tất cả các cô giáo đều vẫn đang part of the phiêu, tức là họ không phải là những người mà nghỉ hưu rồi rồi đi dạy, mà là họ làm vẫn đang làm trong nghề, nên là thực ra cái cân mà biết ở New York nó tức.",
+        "lite_offline_r13_500": "Cả chờ trên SVA là tất cả các cô giáo đều vẫn đang part of the phiêu, tức là họ không phải là những người mà nghỉ hưu rồi rồi đi dạy, mà là họ làm vẫn đang làm trong nghề, nên là thực ra cái cân mà biết ở New York nó tức."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Tro_chuyen_ve_dau_tu_mao_hiem_voi_Hoang_Thi_Kim_Dung_-_Genesia_Ventures_Vietnam_Innovators_VN_EP03_seg069.wav",
+        "ref_offline_r13_500": "Ki bó trong việc sử dụng nguồn tài nguyên thực ra tại vì startup cũng rất là hữu hạn trong một tài nguyên, đúng không? <vi-VN> Thế bây giờ nó đến câu chuyện đổi mới trong startup bởi vì là VC là một cái tổ chức mình sẽ luôn đầu tư vào những công ty startup có cái sự đổi mới rất là cao.",
+        "lite_offline_r13_500": "Kibo trong việc sử dụng nguồn tài nguyên thực ra tại vì startup cũng rất là hữu hạn trong một tài nguyên, đúng không? <vi-VN> Thế bây giờ nó đến câu chuyện đổi mới trong startup bởi vì là VC là một cái tổ chức mình sẽ luôn đầu tư vào những công ty startup có cái sự đổi mới rất là cao."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/3_co_hoi_kiem_tien_trong_thoi_dai_cong_nghe_Tien_Dong_Tien_Dinh_EP05_seg017.wav",
+        "ref_offline_r13_500": "Ra bò đâu bây giờ đây là áo là mình da gà da gà nó dạ mua xoay luôn á dạ da gà nó chiếm khoảng hai phần trăm trong chất liệu cái áo này còn lại là proton như mọi người nói kế vô cùng đẹp gọi là phong.",
+        "lite_offline_r13_500": "Dạ bồi đâu bây giờ đây là áo là mình da gà da gà nó dạ mua xoay luôn á dạ da gà nó chiếm khoảng hai phần trăm trong chất liệu cái áo này còn lại là proton như mọi người nói kế vô cùng đẹp gọi là phong."
+      }
+    ]
+  },
+  {
+    "a": "ref_offline_r3_500",
+    "b": "lite_offline_r3_500",
+    "samples": 500,
+    "wer_a": 25.180972078593587,
+    "wer_b": 25.189589796621853,
+    "wer_delta_points": 0.008617718028265386,
+    "normalized_text_match": 0.99,
+    "raw_text_match": 0.99,
+    "token_match": 0.99,
+    "rtfx_a": 96.72604408871419,
+    "rtfx_b": 187.68392116570672,
+    "vram_gb_a": 4.796775817871094,
+    "vram_gb_b": 3.5570015907287598,
+    "lite_forbidden_modules": [],
+    "pass": true,
+    "mismatches": [
+      {
+        "audio": "audio/asr_segments_vietcetera_part01/Cam_xuc_quan_trong_nhat_la_su_so_hai_-_PGS_TS_Nguyen_Phuong_Mai_HaveASip_169_seg129.wav",
+        "ref_offline_r3_500": "Ờ đi phá huy ờ, phương Tây muốn phá huỷ chúng ta đấy, tức là những cái master narativ như thế thì đây mình quay trở lại câu hỏi của mình thì là làm thế nào để nhìn qua được nhìn xuyên qua được cái",
+        "lite_offline_r3_500": "Ờ đi phá huy ờ, phương Tây muốn phá huỷ chúng ta đấy, tức là những cái master narrativ như thế thì đây mình quay trở lại câu hỏi của mình thì là làm thế nào để nhìn qua được nhìn xuyên qua được cái"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part06/Hoi_thao_truc_tuyen_HOMECOMING_-_Hanh_trinh_tro_ve_seg172.wav",
+        "ref_offline_r3_500": "I mean your industry is so mu so it's hard to say, but like just tech in general maybe you can measure it by six months instead of like ten years to hear your thoughts on that last question and you should unmute yourself too day ago.",
+        "lite_offline_r3_500": "I mean your industry is so mu so it's hard to say, but like just tech in general maybe you can measure it by six months instead of like ten years but want to hear your thoughts on that last question and uh unmute yourself too day ago."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part09/Moi_nguoi_can_chon_san_cua_rieng_minh_de_da_-_HURRYKNG_HaveASip_225_seg005.wav",
+        "ref_offline_r3_500": "Mình là Player thì mình đang chơi cách nào, mình nghệ sĩ sân cỏ thì mình đá hài kiểu của mình, và mình cảm thấy rất là hiệu quả rất là hay. <vi-VN> Em thấy em đá ban rất cũng rất là hay, và nhiều khi là mình không đá nữa thì mình sẽ.",
+        "lite_offline_r3_500": "Mình là layer thì mình đang chơi cách nào, mình nghệ sĩ sân cỏ thì mình đá hài kiểu của mình, và mình cảm thấy rất là hiệu quả rất là hay. <vi-VN> Em thấy em đá ban rất cũng rất là hay, và nhiều khi là mình không đá nữa thì mình sẽ."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part08/Lam_moi_viec_voi_goc_nhin_toi_khong_biet_gi_het_-_Thai_Van_Linh_Have_a_Sip_EP54_seg228.wav",
+        "ref_offline_r3_500": "Chị xác thì khi mà mình chia sẻ những cái vấn đề trong cuộc sống Á là thường mọi người cũng biết thấy ok vậy đây đi gặp bạn gặp vấn đề A, vậy phương pháp là gì phải không? <vi-VN> Nhưng nếu mà là linh á.",
+        "lite_offline_r3_500": "Chính xác thì khi mà mình chia sẻ những cái vấn đề trong cuộc sống Á là thường mọi người cũng biết thấy ok vậy đây đi gặp bạn gặp vấn đề A, vậy phương pháp là gì phải không? <vi-VN> Nhưng nếu mà là linh á."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/3_co_hoi_kiem_tien_trong_thoi_dai_cong_nghe_Tien_Dong_Tien_Dinh_EP05_seg017.wav",
+        "ref_offline_r3_500": "Dạ một đông bảo gia gà đi là áo là mình gia gà da gà nó vậy ai muốn ao ghế luôn á uôi dạ da gà nó chiếm khoảng hai phần trăm trong chất liệu cáo này còn lại là proton như mọi người nói thế mà kế vô cùng đẹp gọi là phòng.",
+        "lite_offline_r3_500": "Dạ một đông bảo gia gà đi là áo là mình gia gà da gà nó vậy ai muốn ao ghế luôn á uối dạ gà nó chiếm khoảng hai phần trăm trong chất liệu cáo này còn lại là proton như mọi người nói thế mà kế vô cùng đẹp gọi là phòng."
+      }
+    ]
+  },
+  {
+    "a": "ref_stream_r13_500",
+    "b": "lite_stream_r13_500",
+    "samples": 500,
+    "wer_a": 23.94002068252327,
+    "wer_b": 23.914167528438472,
+    "wer_delta_points": -0.02585315408479616,
+    "normalized_text_match": 0.98,
+    "raw_text_match": 0.942,
+    "token_match": 0.942,
+    "rtfx_a": 6.614705275281879,
+    "rtfx_b": 19.195942385073632,
+    "vram_gb_a": 4.796775817871094,
+    "vram_gb_b": 2.4331417083740234,
+    "lite_forbidden_modules": [],
+    "pass": false,
+    "mismatches": [
+      {
+        "audio": "audio/asr_segments_vietcetera_part14/Tu_deo_canh_thien_than_len_minh_va_dot_-_Dao_dien_Phuong_Vu_Antiantiart_HaveASip_139_seg166.wav",
+        "ref_stream_r13_500": "Đấy nhưng mà ôi không lúc đấy em em cái phút test đấy là là trong cái sưng mù đấy là kiểu em cháy cho em hét lên, nó chạy không kiểu đấy thì sau cái khoảnh khắc đấy nhá, sau cái khoảnh khắc đấy",
+        "lite_stream_r13_500": "Đấy nhưng mà ôi không lúc đấy em em cái phút test đấy là là trong cái sưng mù đấy là kiểu em cháy cho em hét lên, nó chạy không kiểu đấy thì sau cái khoảnh khắc đấy nhá, sau cái khoảnh khắc đấy luôn."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/Album_Loi_Choi_-_Wren_Evans_ft_itsnk_Bit_Tat_Nhac_268_seg008.wav",
+        "ref_stream_r13_500": "Cái đầu tiên ý nó không phải là một cái gì khó đâu, thực sự nó nó sẽ xảy ra thôi. <vi-VN> Thỉnh thoảng nó cũng sẽ có những mâu thuẫn, thì cái đấy là cái khó nó luôn luôn là một cái khó, nhưng mà anh em mình rất là nhanh ấy, nhưng mà cũng không sao, nhưng mà cái khó thứ hai, cái khó quan trọng này là anh không ở đây hiểu.",
+        "lite_stream_r13_500": "Cái đầu tiên ý nó không phải là một cái cái gì khó đâu, thực sự nó nó sẽ xảy ra thôi. <vi-VN> Thỉnh thoảng nó cũng sẽ có những mâu thuẫn, thì cái đấy là cái khó nó luôn luôn là một cái khó, nhưng mà anh em mình rất là nhanh ấy, nhưng mà cũng không sao, nhưng mà cái khó thứ hai, cái khó quan trọng này là anh không ở đây hiểu."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part08/Lanh_dao_toan_dien_giai_doan_toan_cau_hoa_Managing_Director_tai_Global_Ready_LLC_VI_S3_EP13_seg097.wav",
+        "ref_stream_r13_500": "English, et cetera, and then you have to do other tests to go into this other elite school and there's no time to actually just",
+        "lite_stream_r13_500": "English, et cetera, and then you have to do other tests to go into this other elite school and there's no time to actually just be."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part06/Ke_chuyen_bang_hinh_anh_3D_-_Thao_Dan_Visual_Artist_va_Creative_Director_MAD_EP20_seg043.wav",
+        "ref_stream_r13_500": "Cả chờ chờ trần SVA là tất cả các cô giáo đều vẫn đang part of the phiêu, tức là họ không phải là những người mà nghỉ hưu rồi rồi đi dạy, mà là họ làm vẫn đang làm trong nghề, nên là thực ra cái cân mà biết ở New York nó tức.",
+        "lite_stream_r13_500": "Cả chờ trên SVA là tất cả các cô giáo đều vẫn đang part of the phiêu, tức là họ không phải là những người mà nghỉ hưu rồi rồi đi dạy, mà là họ làm vẫn đang làm trong nghề, nên là thực ra cái cân mà biết ở New York nó tức."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/Andy_Cao_Tao_ra_khong_gian_cua_nhung_giac_mo_MAD_EP09_seg093.wav",
+        "ref_stream_r13_500": "Tuy nhiên, em em muốn hỏi là⁇  nếu mà bây giờ mình đóng sách, mình coi như ok, đây là xong rồi đó thì những cái design này identity của Việt Nam là như thế nào? <vi-VN> Tại vì ví dụ như Nhật đi, mình rất rõ design ở identity của họ, Sweden",
+        "lite_stream_r13_500": "Tuy nhiên, em em muốn hỏi là⁇  nếu mà bây giờ mình đóng sách, mình coi như ok, đây là xong rồi đó thì những cái design này identity của Việt Nam là như thế nào? <vi-VN> Tại vì ví dụ như Nhật đi, mình rất rõ design ở identity của họ, Sweden đi."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part09/Me_co_tung_that_vong_ve_con_khong_-_Ci_Pi_Quang_Phu_ConNhaNguoiTa_Ep2_seg048.wav",
+        "ref_stream_r13_500": "Có dễ gì đâu khi mà mình có thể kiếm được một người đi cùng mình với cùng trời cuối đất, đúng không? <vi-VN> Nói về sự gọi là kết nối thì em có một cái em hay có một cái trò chơi để cảm thấy là vũ trụ này, cái gì nó cũng kết nối với nhau h",
+        "lite_stream_r13_500": "Có dễ gì đâu khi mà mình có thể kiếm được một người đi cùng mình với cùng trời cuối đất, đúng không? <vi-VN> Nói về sự gọi là kết nối thì em có một cái em hay có một cái trò chơi để cảm thấy là vũ trụ này, cái gì nó cũng kết nối với nhau hết."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/Am_thuc_la_mon_nghe_thuat_tuong_tac_-_Phan_Anh_Esheep_Have_a_Sip_EP51_seg248.wav",
+        "ref_stream_r13_500": "Nhiều chuyện hài với anh này chết Facebook lắm rồi tôi không thể tưởng tượng được đây là đầu tiên tôi muốn nói chuyện với ai đó nhá, thậm chí là ai đó chứ không phải là chỉ là món chương trình để để sau này sẽ lại có người khác nghe, mà nó kéo dài hơn một tiếng",
+        "lite_stream_r13_500": "Nhiều chuyện hài với anh này chết Facebook lắm rồi tôi không thể tưởng tượng được đây là đầu tiên tôi muốn nói chuyện với ai đó nhá, thậm chí là ai đó chứ không phải là chỉ là món chương trình để để sau này sẽ lại có người khác nghe, mà nó kéo dài hơn một tiếng rồi."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Tim_duy_nhat_mot_thu_khien_minh_khong_bao_gio_lac_loi_-_RHYDER_HaveASip_237_seg211.wav",
+        "ref_stream_r13_500": "Đúng gì một lúc lúc đó em trộn gặp lại bản thân em luôn mà em chọn cái chưa rồi đến lúc mà mẹ em phải nói như thế nữa, nghĩa là em thấy là là cái sự kỳ vọng mà em là rớt hẳn rồi đấy, em nghĩ là rớt luôn rồi đấy, em ki",
+        "lite_stream_r13_500": "Đúng gì một lúc lúc đó em trộn gặp lại bản thân em luôn mà em chọn cái chưa rồi đến lúc mà mẹ em phải nói như thế nữa, nghĩa là em thấy là là cái sự kỳ vọng mà em là rớt hẳn rồi đấy, em nghĩ là rớt luôn rồi đấy, em kiểu."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Tro_chuyen_ve_dau_tu_mao_hiem_voi_Hoang_Thi_Kim_Dung_-_Genesia_Ventures_Vietnam_Innovators_VN_EP03_seg069.wav",
+        "ref_stream_r13_500": "Ki bó trong việc sử dụng nguồn tài nguyên thực ra tại vì startup cũng rất là hữu hạn trong một tài nguyên, đúng không? <vi-VN> Thế bây giờ nó đến câu chuyện đổi mới trong startup bởi vì là VC là một cái tổ chức mình sẽ luôn đầu tư vào những công ty startup có cái sự đổi mới rất là cao.",
+        "lite_stream_r13_500": "Kibo trong việc sử dụng nguồn tài nguyên thực ra tại vì startup cũng rất là hữu hạn trong một tài nguyên, đúng không? <vi-VN> Thế bây giờ nó đến câu chuyện đổi mới trong startup bởi vì là VC là một cái tổ chức mình sẽ luôn đầu tư vào những công ty startup có cái sự đổi mới rất là cao."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/3_co_hoi_kiem_tien_trong_thoi_dai_cong_nghe_Tien_Dong_Tien_Dinh_EP05_seg017.wav",
+        "ref_stream_r13_500": "Ra bò đâu bây giờ đây là áo là mình da gà da gà nó dạ mua xoay luôn á dạ da gà nó chiếm khoảng hai phần trăm trong chất liệu cái áo này còn lại là proton như mọi người nói kế vô cùng đẹp gọi là phong.",
+        "lite_stream_r13_500": "Dạ bồi đâu bây giờ đây là áo là mình da gà da gà nó dạ mua xoay luôn á dạ da gà nó chiếm khoảng hai phần trăm trong chất liệu cái áo này còn lại là proton như mọi người nói kế vô cùng đẹp gọi là phong."
+      }
+    ]
+  },
+  {
+    "a": "ref_stream_r3_500",
+    "b": "lite_stream_r3_500",
+    "samples": 500,
+    "wer_a": 25.26714925887625,
+    "wer_b": 25.189589796621853,
+    "wer_delta_points": -0.07755946225439558,
+    "normalized_text_match": 0.822,
+    "raw_text_match": 0.7,
+    "token_match": 0.698,
+    "rtfx_a": 4.211865086975944,
+    "rtfx_b": 7.268598177799516,
+    "vram_gb_a": 5.061816215515137,
+    "vram_gb_b": 2.427143096923828,
+    "lite_forbidden_modules": [],
+    "pass": false,
+    "mismatches": [
+      {
+        "audio": "audio/asr_segments_vietcetera_part08/Loi_thu_nhan_cua_ke_bat_nat_nan_nhan_tay_chay_hoc_duong_-_Yen_Nhi_Thanh_Ngan_ConNhaNguoiTa_Ep3_seg036.wav",
+        "ref_stream_r3_500": "Đến em rất là nhiều, em cảm giác là chán cái việc học ở trường hơn. <vi-VN> Em bắt đầu rồi xa gia đình, rời xa bạn bè và đăng những kế hình ảnh lên trên Facebook nó hơi là phản cảm một xíu và không có phù hợp với lứa tuổi em đó, thì các bạn thấy được cái hình ảnh đó,",
+        "lite_stream_r3_500": "Đến em rất là nhiều, em cảm giác là chán cái việc học ở trường hơn. <vi-VN> Em bắt đầu rồi xa gia đình, rời xa bạn bè và đăng những kế hình ảnh lên trên Facebook nó hơi là phản cảm một xíu và không có phù hợp với lứa tuổi em đó, thì các bạn thấy được cái hình ảnh đó, các"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Tim_kiem_loi_nhuan_tu_chung_khoan_-_Nguyen_The_Minh_Head_of_RD_tai_Yuanta_Securities_VIV_S3_EP14_seg043.wav",
+        "ref_stream_r3_500": "Ờ vị chính cái sự thay đổi đó là buộc mình cũng cũng cũng cũng phải thay đổi, cũng phải thay đổi theo. <vi-VN> Tuy nhiên, là cái sự thay đổi đó nó nó nó nó vừa là cái điểm tích cực cho thị trường bằng cách là chúng ta thấy là⁇  khi liên cái thanh khỏi của thị trường nó tăng rất là mạnh, năm hai không mười hai mươi và",
+        "lite_stream_r3_500": "Ờ vị chính cái sự thay đổi đó là buộc mình cũng cũng cũng cũng phải thay đổi, cũng phải thay đổi theo. <vi-VN> Tuy nhiên, là cái sự thay đổi đó nó nó nó nó vừa là cái điểm tích cực cho thị trường bằng cách là chúng ta thấy là⁇  khi liên cái thanh khỏi của thị trường nó tăng rất là mạnh, năm hai không mười hai mươi và không."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part14/Tu_deo_canh_thien_than_len_minh_va_dot_-_Dao_dien_Phuong_Vu_Antiantiart_HaveASip_139_seg166.wav",
+        "ref_stream_r3_500": "Đấy nhưng mà không biết lỗi đấy, em em cái phút test đấy là là trong cái sưng mù đấy là kiểu em cháy cho em hét lên, nó chạy không kiểu đấy thì sau cái khoảnh khắc đấy nhá, sau cái khoảnh khắc đấy",
+        "lite_stream_r3_500": "Đấy nhưng mà không biết lỗi đấy, em em cái phút test đấy là là trong cái sưng mù đấy là kiểu em cháy cho em hét lên, nó chạy không kiểu đấy thì sau cái khoảnh khắc đấy nhá, sau cái khoảnh khắc đấy luôn."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/BAY_VE_VIET_NAM_DE_LAM_PODCAST_sen_-_Jenny_Huynh_GenZTruyen_SS2_Ep8_seg012.wav",
+        "ref_stream_r3_500": "Em nghĩ là em đã kiểu là trưởng thành hơn sau khi vào đại học á thì em kiểu là em đã chuẩn bị tinh thần nhiều hơn, chẳng hạn như là ồ, năm sau em sẽ không có ở ba mẹ nữa, em sẽ ở một mình, em sẽ phải quản lý tài chính riêng, nghĩa là làm mọi thứ",
+        "lite_stream_r3_500": "Em nghĩ là em đã kiểu là trưởng thành hơn sau khi vào đại học á thì em kiểu là em đã chuẩn bị tinh thần nhiều hơn, chẳng hạn như là ồ, năm sau em sẽ không có ở ba mẹ nữa, em sẽ ở một mình, em sẽ phải quản lý tài chính riêng, nghĩa là làm mọi thứ một một một"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Tren_giuong_chang_ai_giong_ai_-_Tung_BT_Coi_Mo_SS2_EP13_seg015.wav",
+        "ref_stream_r3_500": "Anh lên trên đó, anh tặng cho bạn một cái kissing ray, một cái sản phẩm của tụi anh một cái sản phẩm dịch để hôn nhau cho nó sướng mồm, sướng sướng đó thì giấy có một số cái thành phần thảo dược nhất định, thì khi mà tặng bạn ban xịt vô bạn lôi anh hôn",
+        "lite_stream_r3_500": "Anh lên trên đó, anh tặng cho bạn một cái kissing ray, một cái sản phẩm của tụi anh một cái sản phẩm dịch để hôn nhau cho nó sướng mồm, sướng sướng đó thì giấy có một số cái thành phần thảo dược nhất định, thì khi mà tặng bạn ban xịt vô bạn lôi anh hôn cho chỗ cho chỗ"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part09/Nghe_trong_nghiep_ngoai_-_Huynh_Vinh_Son_Phuong_Vu_Trung_Bao_Hai_Doan_Nguyen_Tien_Huy_Tuan_Le_seg058.wav",
+        "ref_stream_r3_500": "Tức là trong một cái bố chết quảng cáo thì chẳng hạn đây, ví dụ như project, những projec lớn quảng cáo thì nó thường qua rất là nhiều lên ở xi này xong là thậm chí là ở ở ở họ thì thậm chí là đôi khi là họ đã có một cái bệnh tim và họ đã có một cái bờ rõ ràng rồi xong là họ qua một xi in gì xử lý chuyện đấy, xong rồi mới đến m",
+        "lite_stream_r3_500": "Tức là trong một cái bố chết quảng cáo thì chẳng hạn đây, ví dụ như project, những projec lớn quảng cáo thì nó thường qua rất là nhiều lên ở xi này xong là thậm chí là ở ở ở họ thì thậm chí là đôi khi là họ đã có một cái bệnh tim và họ đã có một cái bờ rõ ràng rồi xong là họ qua một xi in gì xử lý chuyện đấy, xong rồi mới đến mình."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part09/Nang_cap_kha_nang_quan_ly_nganh_y_te_se_nang_tam_-_Janice_Trinh_Vice_President_Quadria_Capital_seg048.wav",
+        "ref_stream_r3_500": "Tức là ở những cái những thị trường như là ở Trung Quốc hay là ở thậm chí là ở châu Âu đi, cái mô hình y tới tư nhân nó cũng không phải là mô hình là quá là có lịch sử quá là lâu đời, thế nên là thật ra là cái suy nghĩ này nó kh",
+        "lite_stream_r3_500": "Tức là ở những cái những thị trường như là ở Trung Quốc hay là ở thậm chí là ở châu Âu đi, cái mô hình y tới tư nhân nó cũng không phải là mô hình là quá là có lịch sử quá là lâu đời, thế nên là thật ra là cái suy nghĩ này nó không phải"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part07/Khoa_hoc_THUC_SU_noi_gi_ve_tham_du_-_BS_Phan_Chi_Thanh_Benh_Vien_Phu_San_TW_Coi_Mo_SS3_Ep12_seg015.wav",
+        "ref_stream_r3_500": "Dùng không đúng liều hoặc là lạm dụng nó để thực em nó lắp tốt hay không, tuỳ thuộc vào mục đích sử dụng cùng em muốn, ví dụ như là có nhiều ông có cái nhìn khách quan hơn, một cái nhìn tích cực hơn, thì cái việc đó nó sẽ giúp cho chúng ta hiểu rõ được là⁇  à, mình thích c",
+        "lite_stream_r3_500": "Dùng không đúng liều hoặc là lạm dụng nó để thực em nó lắp tốt hay không, tuỳ thuộc vào mục đích sử dụng cùng em muốn, ví dụ như là có nhiều ông có cái nhìn khách quan hơn, một cái nhìn tích cực hơn, thì cái việc đó nó sẽ giúp cho chúng ta hiểu rõ được là⁇  à, mình thích cái gì."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part06/HSBC_bat_tay_cung_WWF_Vietnam_nhan_rong_giai_phap_khi_hau_-_Tim_Evans_Bill_Possiel_seg113.wav",
+        "ref_stream_r3_500": "But feeling really good about what these companies are doing that they're helping make a difference and I think there's a moral imperative that's associated with climate change we know that there's a prepondance of evidence that this is taking place",
+        "lite_stream_r3_500": "But feeling really good about what these companies are doing that they're helping make a difference and I think there's a moral imperative that's associated with climate change we know that there's a prepondance of evidence that this is taking place and we"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Tinh_trong_bar_co_di_xa_Coi_Mo_Happy_Hour_EP01_coimohappyhour_seg152.wav",
+        "ref_stream_r3_500": "Em công nhận nha đi nhảy á, cái ngày nào mày đi nhảy và nói chuyện á là ngày hôm đó bảo đảm là cái tủ lượng nó đi lên một cái mất mới luôn đó, mọi người à mình chạy mình nói nhiều thì cái cồn nó bốc hơi ra",
+        "lite_stream_r3_500": "Em công nhận nha đi nhảy á, cái ngày nào mày đi nhảy và nói chuyện á là ngày hôm đó bảo đảm là cái tủ lượng nó đi lên một cái mất mới luôn đó, mọi người à mình chạy mình nói nhiều thì cái cồn nó bốc hơi ra sao?"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part09/Me_minh_de_ramot_cuc_noi_nhieu_-_Mai_Am_Nhac_GenZTruyen_S2Ep1_seg006.wav",
+        "ref_stream_r3_500": "Về empress thì cái năng lượng của Empress là nó hơi nội tâm một chút, nó hơi không bị lộ ra ngoài quá nhiều, không bị mạnh mẽ quá nhiều, nhưng mà nó có cái sự nuôi nấng kiên trì về bền bỉ, kiên trì có thể là mình nuôi nấng ước mơ này hay là thằng Hưng chẳng hạn, đ",
+        "lite_stream_r3_500": "Về empress thì cái năng lượng của Empress là nó hơi nội tâm một chút, nó hơi không bị lộ ra ngoài quá nhiều, không bị mạnh mẽ quá nhiều, nhưng mà nó có cái sự nuôi nấng kiên trì về bền bỉ, kiên trì có thể là mình nuôi nấng ước mơ này hay là thằng Hưng chẳng hạn, đúng rồi."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Thu_bao_nhieu_lan_truoc_khi_dung_lai_-_Vu_HaveASip_93_seg141.wav",
+        "ref_stream_r3_500": "Thương về miền xuôi ấy thì là nó sẽ có đủ đầy đấy, mọi thứ này à? <vi-VN> Còn miền ngược thì nó hơi đủ đầy mọi thứ là mọi thứ nó hạnh phúc, à, tức là hạnh phúc phát",
+        "lite_stream_r3_500": "Thương về miền xuôi ấy thì là nó sẽ có đủ đầy đấy, mọi thứ này à? <vi-VN> Còn miền ngược thì nó hơi đủ đầy mọi thứ là mọi thứ nó hạnh phúc, à, tức là hạnh phúc phát rồi."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part08/Lam_sao_de_nhung_loi_chuc_cat_canh_-_Dien_gia_Le_Do_Quynh_Huong_HaveASip_10_seg011.wav",
+        "ref_stream_r3_500": "Chị cũng thực ra là Quỳnh Hưng phát hiện ra cái cái sức mạnh của nước trước khi đọc cái cuốn đó, tức là một cậu em rất là thân ở trong ekip nó nó bị nó tưởng đâu, nó ch",
+        "lite_stream_r3_500": "Chị cũng thực ra là Quỳnh Hưng phát hiện ra cái cái sức mạnh của nước trước khi đọc cái cuốn đó, tức là một cậu em rất là thân ở trong ekip nó nó bị nó tưởng đâu, nó chết."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part13/Trai_thang_co_that_su_coi_mo_-_HuyMe_Nha_sang_tao_noi_dung_Coi_Mo_SS2_EP03_seg211.wav",
+        "ref_stream_r3_500": "Người từ nhỏ đứng lại bị bị giáo dục, bị bơm vô đầu những cái những cái luồng tư tưởng như nội tư tưởng cũ. <vi-VN> Vậy thì ông nghĩ sao thấy trong cái câu chuyện mà nói về cái cái quá trình hành trình đi tìm cực khoái thì nó còn nhiều vấn đề đúng không? <vi-VN> Thì ông ông có thích catt",
+        "lite_stream_r3_500": "Người từ nhỏ đứng lại bị bị giáo dục, bị bơm vô đầu những cái những cái luồng tư tưởng như nội tư tưởng cũ. <vi-VN> Vậy thì ông nghĩ sao thấy trong cái câu chuyện mà nói về cái cái quá trình hành trình đi tìm cực khoái thì nó còn nhiều vấn đề đúng không? <vi-VN> Thì ông ông có thích cattle."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/10_nam_kham_pha_su_that_cua_nganh_Sang_tao_-_Tuan_Le_Nha_sang_lap_The_Lab_Saigon_HaveASip_24_seg045.wav",
+        "ref_stream_r3_500": "Mình coi số hay là KPI là bạn của mình đây, khi mà mình biết một điều là với một cái budget nào đó, mình vẫn có thể boost nó lên, thực ra cái KPI của bên tương đó là không có dính tới like say share hay là những cái số đó nó sẽ là đẩy được ba mươi ngàn người đ",
+        "lite_stream_r3_500": "Mình coi số hay là KPI là bạn của mình đây, khi mà mình biết một điều là với một cái budget nào đó, mình vẫn có thể boost nó lên, thực ra cái KPI của bên tương đó là không có dính tới like say share hay là những cái số đó nó sẽ là đẩy được ba mươi ngàn người đi khám."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part08/Lam_the_nao_Go-Food_chiem_20_thi_truong_chi_trong_vong_3_tuan_Young_Marketers_Podcast_EP13_seg098.wav",
+        "ref_stream_r3_500": "Thành công theo mặt nghĩa là ô internal thôi nha, không phải internal nó thầy có Internel thì hơi hơi hơi quá thì cái thời điểm đó là tụi chị nhận ra sau khi một cái thời gian mà mình chạy loan trinh á, xong mình có một lượng khách hàng rồi, mình có một lượng data rồi thì",
+        "lite_stream_r3_500": "Thành công theo mặt nghĩa là ô internal thôi nha, không phải internal nó thầy có Internel thì hơi hơi hơi quá thì cái thời điểm đó là tụi chị nhận ra sau khi một cái thời gian mà mình chạy loan trinh á, xong mình có một lượng khách hàng rồi, mình có một lượng data rồi thì bắt đầu."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part09/Ngai_Robert_McClelland_Professor_Deputy_Dean_SBM_RMIT_Vietnam_Vietnam_Innovators_EP08_seg016.wav",
+        "ref_stream_r3_500": "Those creates a big divide with the people dools to do that and the accessors. <vi-VN> But I think we're very lucky in Vietnam they are very technological. <vi-VN> The population of Viet",
+        "lite_stream_r3_500": "Those creates a big divide with the people dools to do that and the accessors. <vi-VN> But I think we're very lucky in Vietnam they are very technological. <vi-VN> The population of Vietnam."
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part07/Kiem_tien_tu_Dropshipping_-_Ha_Phuong_Anh_CRO_OpenCommerce_Vietnam_Innovators_S2_EP02_seg122.wav",
+        "ref_stream_r3_500": "Và tại vì chị mình mình có khả năng teleport đi một mình thì rất là chán bây giờ thì em chọn khả năng có thể nói được mọi thứ tiếng trên thế giới một cách lưu loát, tại vì em nghĩ là bản chất mọi công việc trên thế giới này hoạt động đều là do sự kết nối, giao tiếp giữa con người với con người, do gây đến là em",
+        "lite_stream_r3_500": "Và tại vì chị mình mình có khả năng teleport đi một mình thì rất là chán bây giờ thì em chọn khả năng có thể nói được mọi thứ tiếng trên thế giới một cách lưu loát, tại vì em nghĩ là bản chất mọi công việc trên thế giới này hoạt động đều là do sự kết nối, giao tiếp giữa con người với con người, do gây đến là em thấy"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part01/Cach_mang_hoa_khong_gian_lam_viec_-_Duong_Do_Co-Founder_Toong_co-working_space_Blueprint_EP02_seg030.wav",
+        "ref_stream_r3_500": "Để làm tốt hơn cái việc là làm sao mà biểu hiện được cái văn hóa mà mình muốn xây dựng ở trong cái không gian của mình, bởi vì thực ra các bạn hiểu là chúng ta nói rất nhiều cái từ dùng rất nhiều từ văn hóa. <vi-VN> Tuy nhiên, nếu mà để mà hỏi",
+        "lite_stream_r3_500": "Để làm tốt hơn cái việc là làm sao mà biểu hiện được cái văn hóa mà mình muốn xây dựng ở trong cái không gian của mình, bởi vì thực ra các bạn hiểu là chúng ta nói rất nhiều cái từ dùng rất nhiều từ văn hóa. <vi-VN> Tuy nhiên, nếu mà để mà hỏi là"
+      },
+      {
+        "audio": "audio/asr_segments_vietcetera_part00/Ai_giuc_de_thi_gop_tien_nuoi_con_ho_voi_-_Lam_Thuy_Nhan_Me_cua_He_va_Hiu_Coi_Mo_SS3_Ep19_seg198.wav",
+        "ref_stream_r3_500": "Có con vậy thì là một người đã đi trước, chị có thể nào em không nói à không có khuyên, em không có kêu là kế động mêu nhàn ta, nhưng mà ít nhất chị hiệu dịu chứ gì nè sợ rồi không đốm đốm đúng vào tr",
+        "lite_stream_r3_500": "Có con vậy thì là một người đã đi trước, chị có thể nào em không nói à không có khuyên, em không có kêu là kế động mêu nhàn ta, nhưng mà ít nhất chị hiệu dịu chứ gì nè sợ rồi không đốm đốm đúng vào trước."
+      }
+    ]
+  }
+]

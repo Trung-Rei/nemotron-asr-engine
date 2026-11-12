@@ -1,0 +1,182 @@
+[
+ {
+  "label": "nemo_open_c64",
+  "backend": "nemo",
+  "mode": "sweep",
+  "lookahead": 3,
+  "chunk_ms": 320.0,
+  "dtype": "float32",
+  "max_batch": 64,
+  "target_concurrency": 64,
+  "mean_concurrency": 78.75,
+  "sessions": 162,
+  "rejected": 0,
+  "chunks": 12303,
+  "chunks_per_s": 246.06,
+  "mean_batch": 16.876778021620744,
+  "lag_ms": {
+   "50": 77.16752829713869,
+   "95": 137.17082351099916,
+   "99": 1339.6526249279782
+  },
+  "lag_max_ms": 1825.296675039489,
+  "late_chunk_frac": 0.03421929610664066,
+  "finalize_ms": {
+   "50": 77.21197994379736,
+   "95": 206.90196355865288,
+   "99": 1550.329565161647
+  },
+  "finalize_e2e_ms": {
+   "50": 234.00721970659788,
+   "95": 490.6821775211326,
+   "99": 1784.0213932184727
+  },
+  "turns": 218,
+  "turns_missing": 0,
+  "wer": 19.262072707542053,
+  "wer_turns": 22,
+  "gpu_util_mean": null,
+  "peak_vram_gb": 6.739621162414551,
+  "slo_ok": true,
+  "wall_s": {
+   "build": 2.155493245110847,
+   "run": 96.02614873601124,
+   "summarize": 0.06622442207299173
+  }
+ },
+ {
+  "label": "nemo_open_c128",
+  "backend": "nemo",
+  "mode": "sweep",
+  "lookahead": 3,
+  "chunk_ms": 320.0,
+  "dtype": "float32",
+  "max_batch": 64,
+  "target_concurrency": 128,
+  "mean_concurrency": 133.83,
+  "sessions": 290,
+  "rejected": 0,
+  "chunks": 20918,
+  "chunks_per_s": 418.36,
+  "mean_batch": 29.986423176211876,
+  "lag_ms": {
+   "50": 90.41006958190678,
+   "95": 147.73777090242885,
+   "99": 162.63022928963358
+  },
+  "lag_max_ms": 177.04799110396152,
+  "late_chunk_frac": 0.0,
+  "finalize_ms": {
+   "50": 87.13775272816093,
+   "95": 146.62912252144903,
+   "99": 163.26675382079316
+  },
+  "finalize_e2e_ms": {
+   "50": 247.40750824892643,
+   "95": 420.86350756021733,
+   "99": 460.86291603785554
+  },
+  "turns": 413,
+  "turns_missing": 0,
+  "wer": 20.7284572105419,
+  "wer_turns": 45,
+  "gpu_util_mean": null,
+  "peak_vram_gb": 6.639658451080322,
+  "slo_ok": true,
+  "wall_s": {
+   "build": 4.012482574908063,
+   "run": 96.04315397993196,
+   "summarize": 0.06528960797004402
+  }
+ },
+ {
+  "label": "nemo_open_c192",
+  "backend": "nemo",
+  "mode": "sweep",
+  "lookahead": 3,
+  "chunk_ms": 320.0,
+  "dtype": "float32",
+  "max_batch": 64,
+  "target_concurrency": 192,
+  "mean_concurrency": 194.28,
+  "sessions": 407,
+  "rejected": 0,
+  "chunks": 30365,
+  "chunks_per_s": 607.3,
+  "mean_batch": 45.62473242219661,
+  "lag_ms": {
+   "50": 96.50919692147397,
+   "95": 156.17430351785515,
+   "99": 168.90745470558272
+  },
+  "lag_max_ms": 195.1964847002472,
+  "late_chunk_frac": 0.0,
+  "finalize_ms": {
+   "50": 95.04311423357237,
+   "95": 154.0915491713576,
+   "99": 170.50508918199156
+  },
+  "finalize_e2e_ms": {
+   "50": 265.65091358724044,
+   "95": 421.43169703885627,
+   "99": 469.6668737256341
+  },
+  "turns": 580,
+  "turns_missing": 0,
+  "wer": 24.608948708621316,
+  "wer_turns": 80,
+  "gpu_util_mean": null,
+  "peak_vram_gb": 6.742676734924316,
+  "slo_ok": true,
+  "wall_s": {
+   "build": 5.171574564999901,
+   "run": 96.05674355092924,
+   "summarize": 0.10725632996764034
+  }
+ },
+ {
+  "label": "nemo_open_c256",
+  "backend": "nemo",
+  "mode": "sweep",
+  "lookahead": 3,
+  "chunk_ms": 320.0,
+  "dtype": "float32",
+  "max_batch": 64,
+  "target_concurrency": 256,
+  "mean_concurrency": 273.0,
+  "sessions": 594,
+  "rejected": 0,
+  "chunks": 42632,
+  "chunks_per_s": 852.64,
+  "mean_batch": 62.45210170763745,
+  "lag_ms": {
+   "50": 173.22881898321896,
+   "95": 778.2995450163631,
+   "99": 939.1119439787973
+  },
+  "lag_max_ms": 1026.5259854815624,
+  "late_chunk_frac": 0.18347720022518296,
+  "finalize_ms": {
+   "50": 175.7452025905195,
+   "95": 763.3748024125185,
+   "99": 887.4436213052577
+  },
+  "finalize_e2e_ms": {
+   "50": 372.48968562319715,
+   "95": 970.3991384447241,
+   "99": 1072.832648023843
+  },
+  "turns": 794,
+  "turns_missing": 0,
+  "wer": 23.9046477560261,
+  "wer_turns": 105,
+  "gpu_util_mean": null,
+  "peak_vram_gb": 6.743440628051758,
+  "slo_ok": false,
+  "wall_s": {
+   "build": 7.953867248957977,
+   "run": 96.08013869496062,
+   "summarize": 0.15660321107134223
+  }
+ }
+]

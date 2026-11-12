@@ -1,0 +1,29 @@
+{
+  "impl": "nemotron_lite",
+  "split": "validation",
+  "sample_seed": 42,
+  "target_lang": "vi-VN",
+  "att_context_size": [
+    56,
+    13
+  ],
+  "dtype": "fp32",
+  "device": "cuda:0",
+  "torch_version": "2.7.1+cu128",
+  "mode": "offline",
+  "batch_size": 8,
+  "elapsed_seconds": 35.11433458328247,
+  "audio_seconds": 6582.700312499998,
+  "rtfx": 187.46476020747224,
+  "peak_vram_gb": 3.5570015907287598,
+  "forbidden_modules_loaded": [],
+  "samples": 500,
+  "wer": 0.2391416752843847,
+  "wer_percent": 23.914167528438472,
+  "substitutions": 2926,
+  "deletions": 436,
+  "insertions": 2188,
+  "hits": 19846,
+  "normalization": "NFC, lowercase, punctuation stripped, whitespace collapsed",
+  "finished_at": "2026-11-12T07:30:26"
+}

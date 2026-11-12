@@ -1,0 +1,38 @@
+{
+ "parity": {
+  "streams": 64,
+  "audio_s": 853.0000625,
+  "wall_s_20ms": 2.341610713978298,
+  "vs_direct_identical": 64,
+  "vs_direct_tokens_diff": 0,
+  "pkt100_identical": 64,
+  "pkt100_tokens_diff": 0,
+  "tokens": 9272,
+  "wer_engine": 25.516528925619834,
+  "steps": 48,
+  "greedy_continuations": 37
+ },
+ "audio_8k": {
+  "utts": 50,
+  "wer_16k_telephone": 29.494505494505496,
+  "wer_8k_mulaw": 28.87912087912088,
+  "wer_16k_clean": 26.373626373626376
+ },
+ "multi_turn": {
+  "turns": [
+   "Mà trong cái thế giới nào các bạn bẻ đôi nửa chữ từ chứng kh",
+   ". Đến em rất là nhiều, em cảm giác là chán cái việc học ở tr",
+   "các bạn vì chính cái sự thay đổi đó là buộc mình cũng cũng c",
+   ""
+  ],
+  "wer": 27.976190476190478
+ },
+ "stress": {
+  "ok": true,
+  "events_after_aclose": [
+   0,
+   0,
+   0
+  ]
+ }
+}

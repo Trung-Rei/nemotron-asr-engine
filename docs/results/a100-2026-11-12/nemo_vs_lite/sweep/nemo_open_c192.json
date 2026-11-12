@@ -1,0 +1,45 @@
+{
+ "label": "nemo_open_c192",
+ "backend": "nemo",
+ "mode": "sweep",
+ "lookahead": 3,
+ "chunk_ms": 320.0,
+ "dtype": "float32",
+ "max_batch": 64,
+ "target_concurrency": 192,
+ "mean_concurrency": 194.28,
+ "sessions": 407,
+ "rejected": 0,
+ "chunks": 30365,
+ "chunks_per_s": 607.3,
+ "mean_batch": 45.62473242219661,
+ "lag_ms": {
+  "50": 96.50919692147397,
+  "95": 156.17430351785515,
+  "99": 168.90745470558272
+ },
+ "lag_max_ms": 195.1964847002472,
+ "late_chunk_frac": 0.0,
+ "finalize_ms": {
+  "50": 95.04311423357237,
+  "95": 154.0915491713576,
+  "99": 170.50508918199156
+ },
+ "finalize_e2e_ms": {
+  "50": 265.65091358724044,
+  "95": 421.43169703885627,
+  "99": 469.6668737256341
+ },
+ "turns": 580,
+ "turns_missing": 0,
+ "wer": 24.608948708621316,
+ "wer_turns": 80,
+ "gpu_util_mean": null,
+ "peak_vram_gb": 6.742676734924316,
+ "slo_ok": true,
+ "wall_s": {
+  "build": 5.171574564999901,
+  "run": 96.05674355092924,
+  "summarize": 0.10725632996764034
+ }
+}

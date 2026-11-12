@@ -1,0 +1,74 @@
+[
+ {
+  "batch": 64,
+  "stages_ms": {
+   "log-mel (preemphasis + STFT)": 0.08714240074157714,
+   "subsampling + cache": 1.085665283203125,
+   "gather cache + mask": 3.238133850097656,
+   "FFN 1 (24 lớp)": 2.7785830688476563,
+   "attn: QKV + ghi cache (24 lớp)": 1.1180850982666015,
+   "attn: bias rel-pos (24 lớp)": 0.41435134887695313,
+   "attn: SDPA (24 lớp)": 2.369679412841797,
+   "attn: o_proj (24 lớp)": 0.45983745574951174,
+   "conv module (24 lớp)": 2.721443786621094,
+   "FFN 2 (24 lớp)": 2.7761050415039064,
+   "LayerNorm ra (24 lớp)": 0.13232128143310548,
+   "prompt + encoder projector": 0.0840499210357666,
+   "scatter cache": 1.2524134063720702,
+   "greedy 12 bước": 2.3613031005859373
+  },
+  "sum_ms": 20.879114456176758,
+  "whole_step_ms": 27.66761962890625,
+  "eager_step_ms": 41.23513972153887,
+  "continuation_4_steps_ms": 0.7675289916992187,
+  "layers": 24
+ },
+ {
+  "batch": 32,
+  "stages_ms": {
+   "log-mel (preemphasis + STFT)": 0.04814847946166992,
+   "subsampling + cache": 0.5409177780151367,
+   "gather cache + mask": 1.6576101684570312,
+   "FFN 1 (24 lớp)": 1.870766143798828,
+   "attn: QKV + ghi cache (24 lớp)": 1.051176986694336,
+   "attn: bias rel-pos (24 lớp)": 0.4228300857543945,
+   "attn: SDPA (24 lớp)": 1.4886912536621093,
+   "attn: o_proj (24 lớp)": 0.368803825378418,
+   "conv module (24 lớp)": 1.7039768981933594,
+   "FFN 2 (24 lớp)": 1.8921267700195312,
+   "LayerNorm ra (24 lớp)": 0.12095487594604493,
+   "prompt + encoder projector": 0.06107135772705078,
+   "scatter cache": 0.6144204711914063,
+   "greedy 12 bước": 1.9179315185546875
+  },
+  "sum_ms": 13.759426612854007,
+  "whole_step_ms": 22.9189013671875,
+  "eager_step_ms": 42.210440079215914,
+  "continuation_4_steps_ms": 0.67557373046875,
+  "layers": 24
+ },
+ {
+  "batch": 8,
+  "stages_ms": {
+   "log-mel (preemphasis + STFT)": 0.04239359855651856,
+   "subsampling + cache": 0.24059904098510743,
+   "gather cache + mask": 0.3317145538330078,
+   "FFN 1 (24 lớp)": 1.3953843688964844,
+   "attn: QKV + ghi cache (24 lớp)": 0.7890534210205078,
+   "attn: bias rel-pos (24 lớp)": 0.41013248443603517,
+   "attn: SDPA (24 lớp)": 0.6481715393066406,
+   "attn: o_proj (24 lớp)": 0.31754240036010745,
+   "conv module (24 lớp)": 1.4377369689941406,
+   "FFN 2 (24 lớp)": 1.3798399353027344,
+   "LayerNorm ra (24 lớp)": 0.13105152130126954,
+   "prompt + encoder projector": 0.050769920349121096,
+   "scatter cache": 0.18171903610229492,
+   "greedy 12 bước": 2.2162431335449218
+  },
+  "sum_ms": 9.572351922988892,
+  "whole_step_ms": 9.347809448242188,
+  "eager_step_ms": 41.46341082174331,
+  "continuation_4_steps_ms": 0.76621826171875,
+  "layers": 24
+ }
+]

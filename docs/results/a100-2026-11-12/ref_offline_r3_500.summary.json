@@ -1,0 +1,32 @@
+{
+  "impl": "nemo",
+  "mode": "offline",
+  "model_repo": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+  "split": "validation",
+  "sample_seed": 42,
+  "batch_size": 8,
+  "target_lang": "vi-VN",
+  "att_context_size": [
+    56,
+    3
+  ],
+  "elapsed_seconds": 68.05509376525879,
+  "audio_seconds": 6582.7,
+  "rtfx": 96.72604408871419,
+  "peak_vram_gb": 4.796775817871094,
+  "nemo_version": "3.1.0",
+  "nemo_pip": [
+    "Version: 3.1.0",
+    "Location: /opt/conda/lib/python3.11/site-packages"
+  ],
+  "nemo_direct_url": "{\"archive_info\": {\"hash\": \"sha256=af1af8f19ce2994c6b6f470daadd3b5e18b7c1b2674a450e70b859bfcf90a950\", \"hashes\": {\"sha256\": \"af1af8f19ce2994c6b6f470daadd3b5e18b7c1b2674a450e70b859bfcf90a950\"}}, \"url\": \"https://github.com/NVIDIA-NeMo/Speech/archive/e5d79d5a49cbec49d79440b0070aac0c32a8dbb8.tar.gz\"}",
+  "samples": 500,
+  "wer": 0.2518097207859359,
+  "wer_percent": 25.180972078593587,
+  "substitutions": 3063,
+  "deletions": 414,
+  "insertions": 2367,
+  "hits": 19731,
+  "normalization": "NFC, lowercase, punctuation stripped, whitespace collapsed",
+  "finished_at": "2026-11-12T07:28:23"
+}
