@@ -15,8 +15,8 @@ num_gpus: 1
 disk_gb: 80          # torch + NeMo ~15 GB, model files ~5 GB, dataset audio, caches
 
 # Budget
-max_price: 0.40      # USD per hour
-verified_only: false # public model and dataset only
+max_price: 0.45      # USD per hour (verified A100 hosts started from $0.42 on 2026-11-12)
+verified_only: true  # an unverified host failed to start once; verified ones start reliably
 
 # Storage: results survive the machine
 storage:
