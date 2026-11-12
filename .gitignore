@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+results/
+.pytest_cache/
+.ruff_cache/
+*.safetensors
+*.nemo
+.vkong/

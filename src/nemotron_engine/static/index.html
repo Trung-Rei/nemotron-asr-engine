@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nemotron-engine demo</title>
+<style>
+  :root { --bg: #fafafa; --fg: #1d1d1f; --muted: #6e6e73; --card: #fff; --line: #e3e3e6; --accent: #0a66c2; --partial: #8a8a8e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --fg: #ececf0; --muted: #9a9aa2; --card: #1b1b1f; --line: #2c2c31; --accent: #5aa2ff; --partial: #8a8a93; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  p.sub { color: var(--muted); margin: 0 0 24px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+  button { font: inherit; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button:disabled { opacity: .5; cursor: default; }
+  select, label { font: inherit; color: var(--fg); }
+  select { padding: 7px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); }
+  #log { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; min-height: 240px; }
+  .final { margin: 0 0 8px; }
+  .final small { color: var(--muted); margin-left: 8px; font-size: 12px; }
+  #partial { color: var(--partial); font-style: italic; min-height: 1.5em; }
+  #status { color: var(--muted); font-size: 14px; }
+  #level { width: 120px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+  #level > div { height: 100%; width: 0; background: var(--accent); transition: width .05s; }
+</style>
+</head>
+<body>
+<main>
+  <h1>nemotron-engine</h1>
+  <p class="sub">Speak into your microphone. Partial text appears as you talk; a final is produced at each utterance end.</p>
+  <div class="bar">
+    <button id="start" class="primary">Start</button>
+    <button id="end" disabled>End utterance</button>
+    <button id="stop" disabled>Stop</button>
+    <select id="lang" aria-label="language">
+      <option value="auto">auto</option><option value="en-US">en-US</option><option value="vi-VN">vi-VN</option>
+      <option value="de-DE">de-DE</option><option value="fr-FR">fr-FR</option><option value="es-ES">es-ES</option>
+      <option value="ja-JP">ja-JP</option><option value="zh-CN">zh-CN</option>
+    </select>
+    <label><input type="checkbox" id="vad" checked> end utterance after 700 ms of silence</label>
+    <div id="level"><div></div></div>
+  </div>
+  <div id="log"><div id="finals"></div><div id="partial"></div></div>
+  <p id="status">idle</p>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+let ws, ctx, stream, node, silentMs = 0, spoke = false;
+
+// AudioWorklet: float32 frames from the mic, downsampled in the browser by an AudioContext at 16 kHz
+const worklet = `class Tap extends AudioWorkletProcessor {
+  process(inputs) { const ch = inputs[0][0]; if (ch) this.port.postMessage(ch.slice(0)); return true; }
+}
+registerProcessor("tap", Tap);`;
+
+function status(t) { $("status").textContent = t; }
+
+async function start() {
+  const url = `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/v1/stream?sample_rate=16000&encoding=pcm16&language=${$("lang").value}`;
+  ws = new WebSocket(url);
+  ws.onmessage = (m) => {
+    const ev = JSON.parse(m.data);
+    if (ev.type === "partial") $("partial").textContent = ev.text;
+    if (ev.type === "final") {
+      $("partial").textContent = "";
+      if (ev.text) {
+        const d = document.createElement("p"); d.className = "final"; d.textContent = ev.text;
+        const s = document.createElement("small"); s.textContent = `${ev.latency_ms} ms`; d.appendChild(s);
+        $("finals").appendChild(d);
+      }
+    }
+  };
+  ws.onclose = (e) => { status(e.code === 1013 ? "server is full, try again later" : `closed (${e.code})`); teardown(); };
+  await new Promise((ok, err) => { ws.onopen = ok; ws.onerror = () => err(new Error("cannot connect")); });
+
+  stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, channelCount: 1 } });
+  ctx = new AudioContext({ sampleRate: 16000 });
+  await ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([worklet], { type: "text/javascript" })));
+  node = new AudioWorkletNode(ctx, "tap");
+  ctx.createMediaStreamSource(stream).connect(node);
+  node.port.onmessage = (e) => {
+    const f = e.data, pcm = new Int16Array(f.length);
+    let e2 = 0;
+    for (let i = 0; i < f.length; i++) { const v = Math.max(-1, Math.min(1, f[i])); pcm[i] = v * 32767; e2 += v * v; }
+    if (ws.readyState === 1) ws.send(pcm.buffer);
+    const rms = Math.sqrt(e2 / f.length);
+    $("level").firstChild.style.width = `${Math.min(100, rms * 600)}%`;
+    if (!$("vad").checked) return;
+    const ms = f.length / 16;  // 16 samples per ms
+    if (rms > 0.015) { spoke = true; silentMs = 0; } else if (spoke && (silentMs += ms) > 700) { endUtterance(); }
+  };
+  $("start").disabled = true; $("end").disabled = false; $("stop").disabled = false; $("lang").disabled = true;
+  status("listening");
+}
+
+function endUtterance() {
+  spoke = false; silentMs = 0;
+  if (ws && ws.readyState === 1) ws.send(JSON.stringify({ type: "end_turn", pad: true }));
+}
+
+function teardown() {
+  if (node) node.disconnect();
+  if (stream) stream.getTracks().forEach((t) => t.stop());
+  if (ctx) ctx.close();
+  node = stream = ctx = null;
+  $("start").disabled = false; $("end").disabled = true; $("stop").disabled = true; $("lang").disabled = false;
+  $("level").firstChild.style.width = "0";
+}
+
+$("start").onclick = () => start().catch((e) => { status(e.message); if (ws) ws.close(); teardown(); });
+$("end").onclick = endUtterance;
+$("stop").onclick = () => { if (ws && ws.readyState === 1) ws.send(JSON.stringify({ type: "close" })); };
+</script>
+</body>
+</html>

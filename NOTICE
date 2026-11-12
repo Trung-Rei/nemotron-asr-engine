@@ -1,0 +1,27 @@
+nemotron-engine
+Copyright 2026 Trung-Rei
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This is an independent, unofficial project. It is not affiliated with, sponsored by or endorsed by NVIDIA.
+
+-------------------------------------------------------------------------------
+Model
+-------------------------------------------------------------------------------
+The engine runs the model nvidia/nemotron-3.5-asr-streaming-0.6b by NVIDIA Corporation
+(https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b). The model weights are NOT part of this
+repository; they are downloaded from the Hugging Face Hub at run time. Use of the model is governed by the
+OpenMDW License 1.1 (https://openmdw.ai/license/1-1/). If you redistribute the model weights, keep that license
+and NVIDIA's notices with them.
+
+-------------------------------------------------------------------------------
+NVIDIA NeMo
+-------------------------------------------------------------------------------
+The PyTorch implementation of the model architecture (src/nemotron_engine/model.py, research/nemotron_lite/)
+was written to reproduce the behaviour of NVIDIA NeMo (https://github.com/NVIDIA-NeMo/Speech),
+Copyright (c) NVIDIA CORPORATION & AFFILIATES, licensed under the Apache License, Version 2.0.
+
+bench/rtfx/nemo_examples/ contains two unmodified files from NeMo commit e5d79d5
+(examples/asr/transcribe_speech.py and
+examples/asr/asr_cache_aware_streaming/speech_to_text_cache_aware_streaming_infer.py), kept with their original
+license headers, Copyright (c) 2020-2022 NVIDIA CORPORATION & AFFILIATES, Apache License, Version 2.0.

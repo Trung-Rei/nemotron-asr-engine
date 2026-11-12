@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "nemotron-engine: real-time multi-stream streaming ASR for Nemotron ASR streaming 0.6B"
+authors:
+  - name: "Trung-Rei"
+version: 0.1.0
+date-released: 2026-11-12
+license: Apache-2.0
+repository-code: "https://github.com/Trung-Rei/nemotron-engine"
+keywords: [asr, speech-recognition, streaming, rnnt, cuda-graphs, pytorch]
